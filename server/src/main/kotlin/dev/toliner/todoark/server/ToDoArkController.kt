@@ -1,4 +1,4 @@
-package dev.toliner
+package dev.toliner.todoark.server
 
 import io.micronaut.http.annotation.Controller
 import io.micronaut.http.annotation.Get

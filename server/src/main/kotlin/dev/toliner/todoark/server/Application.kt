@@ -1,4 +1,4 @@
-package dev.toliner
+package dev.toliner.todoark.server
 
 import io.micronaut.context.ApplicationContextBuilder
 import io.micronaut.context.ApplicationContextConfigurer

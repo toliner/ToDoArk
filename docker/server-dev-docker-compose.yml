@@ -1,0 +1,16 @@
+version: "3.9"
+services:
+  db:
+    image: postgres:16-bullseye
+    container_name: pgsql
+    hostname: pgsql
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "password"
+    volumes:
+      - db_volume:/var/lib/postgresql/data
+volumes:
+  db_volume:

@@ -16,7 +16,7 @@ kotlin = "1.9.23"
 micronaut = "4.4.2"
 
 [libraries]
-
+kotlinx-coroutine = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version = "1.8.1"}
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }

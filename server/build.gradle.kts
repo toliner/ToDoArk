@@ -23,6 +23,7 @@ dependencies {
     kapt("io.micronaut.openapi:micronaut-openapi-adoc")
     kapt("io.micronaut.security:micronaut-security-annotations")
     kapt("io.micronaut.serde:micronaut-serde-processor")
+    kapt("io.micronaut.data:micronaut-data-processor")
     implementation("io.micronaut:micronaut-aop")
     implementation("io.micronaut:micronaut-http-client")
     implementation("io.micronaut:micronaut-jackson-databind")
@@ -33,11 +34,14 @@ dependencies {
     // implementation("io.micronaut.security:micronaut-security-oauth2")
     // implementation("io.micronaut.security:micronaut-security-session")
     implementation("io.micronaut.serde:micronaut-serde-jackson")
-    // implementation("io.micronaut.sql:micronaut-jdbc-hikari")
+    implementation("io.micronaut.sql:micronaut-jdbc-hikari")
+    implementation("io.micronaut.data:micronaut-data-jdbc")
     implementation("org.apache.logging.log4j:log4j-api")
+    implementation("jakarta.annotation:jakarta.annotation-api")
     implementation(platform("org.apache.logging.log4j:log4j-bom:2.23.1"))
     implementation("org.jetbrains.kotlin:kotlin-reflect:${libs.versions.kotlin}")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:${libs.versions.kotlin}")
+    implementation(libs.kotlinx.coroutine)
     compileOnly("io.micronaut.openapi:micronaut-openapi-annotations")
     runtimeOnly("com.fasterxml.jackson.module:jackson-module-kotlin")
     runtimeOnly("org.apache.logging.log4j:log4j-core")
@@ -50,7 +54,7 @@ dependencies {
 }
 
 application {
-    mainClass = "dev.toliner.ApplicationKt"
+    mainClass = "dev.toliner.todoark.server.ApplicationKt"
 }
 java {
     sourceCompatibility = JavaVersion.toVersion("21")
@@ -98,4 +102,11 @@ micronaut {
 
 tasks.named<io.micronaut.gradle.docker.NativeImageDockerfile>("dockerfileNative") {
     jdkVersion = "21"
+}
+
+allOpen {
+    annotations(
+        "io.micronaut.aop.Around",
+        "io.micronaut.aop.Introduction"
+    )
 }

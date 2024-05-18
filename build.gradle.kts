@@ -7,6 +7,7 @@ plugins {
     id("com.google.cloud.tools.jib") version "2.8.0"
     id("io.micronaut.test-resources") version "4.3.8"
     id("io.micronaut.aot") version "4.3.8"
+    id("org.jlleitschuh.gradle.ktlint") version "12.1.1"
 }
 
 version = "0.1"

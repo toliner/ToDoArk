@@ -13,7 +13,7 @@ plugins {
 version = "0.1"
 group = "dev.toliner"
 
-val kotlinVersion=project.properties.get("kotlinVersion")
+val kotlinVersion = project.properties.get("kotlinVersion")
 repositories {
     mavenCentral()
 }
@@ -37,19 +37,18 @@ dependencies {
     implementation("io.micronaut.sql:micronaut-jdbc-hikari")
     implementation("org.apache.logging.log4j:log4j-api")
     implementation(platform("org.apache.logging.log4j:log4j-bom:2.23.1"))
-    implementation("org.jetbrains.kotlin:kotlin-reflect:${kotlinVersion}")
-    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:${kotlinVersion}")
+    implementation("org.jetbrains.kotlin:kotlin-reflect:$kotlinVersion")
+    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlinVersion")
     compileOnly("io.micronaut.openapi:micronaut-openapi-annotations")
     runtimeOnly("com.fasterxml.jackson.module:jackson-module-kotlin")
     runtimeOnly("org.apache.logging.log4j:log4j-core")
-    runtimeOnly("org.apache.logging.log4j:log4j-slf4j-impl")
+    runtimeOnly("org.apache.logging.log4j:log4j-slf4j2-impl")
     runtimeOnly("org.postgresql:postgresql")
     developmentOnly("io.micronaut.controlpanel:micronaut-control-panel-management")
     developmentOnly("io.micronaut.controlpanel:micronaut-control-panel-ui")
     aotPlugins(platform("io.micronaut.platform:micronaut-platform:4.4.2"))
     aotPlugins("io.micronaut.security:micronaut-security-aot")
 }
-
 
 application {
     mainClass = "dev.toliner.ApplicationKt"
@@ -83,8 +82,8 @@ micronaut {
         additionalModules.add("jdbc-postgresql")
     }
     aot {
-    // Please review carefully the optimizations enabled below
-    // Check https://micronaut-projects.github.io/micronaut-aot/latest/guide/ for more details
+        // Please review carefully the optimizations enabled below
+        // Check https://micronaut-projects.github.io/micronaut-aot/latest/guide/ for more details
         optimizeServiceLoading = false
         convertYamlToJava = false
         precomputeOperations = true
@@ -93,14 +92,11 @@ micronaut {
         deduceEnvironment = true
         optimizeNetty = true
         replaceLogbackXml = true
-        configurationProperties.put("micronaut.security.jwks.enabled","false")
-        configurationProperties.put("micronaut.security.openid-configuration.enabled","false")
+        configurationProperties.put("micronaut.security.jwks.enabled", "false")
+        configurationProperties.put("micronaut.security.openid-configuration.enabled", "false")
     }
 }
-
 
 tasks.named<io.micronaut.gradle.docker.NativeImageDockerfile>("dockerfileNative") {
     jdkVersion = "21"
 }
-
-

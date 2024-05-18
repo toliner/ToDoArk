@@ -1,4 +1,3 @@
 
 
-rootProject.name="ToDoArk"
-
+rootProject.name = "ToDoArk"

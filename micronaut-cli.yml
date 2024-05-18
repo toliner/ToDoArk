@@ -1,0 +1,6 @@
+applicationType: default
+defaultPackage: dev.toliner
+testFramework: kotest
+sourceLanguage: kotlin
+buildTool: gradle_kotlin
+features: [app-name, config4k, control-panel, graalvm, gradle, http-client, http-client-test, jackson-databind, jdbc-hikari, jib, kapt, kotest, kotlin, kotlin-application, log4j2, management, micronaut-aop, micronaut-aot, micronaut-build, micronaut-http-validation, netty-server, openapi, openapi-adoc, postgres, readme, redoc, retry, security-annotations, security-jwt, security-oauth2, security-session, serialization-jackson, shade, static-resources, swagger-ui, test-resources]

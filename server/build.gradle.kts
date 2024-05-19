@@ -18,6 +18,7 @@ repositories {
 }
 
 dependencies {
+    implementation(project(":common"))
     kapt("io.micronaut:micronaut-http-validation")
     kapt("io.micronaut.openapi:micronaut-openapi")
     kapt("io.micronaut.openapi:micronaut-openapi-adoc")

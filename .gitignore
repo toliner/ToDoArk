@@ -14,3 +14,4 @@ out/
 .classpath
 .factorypath
 secret/
+/server/src/main/resources/application-prod.conf

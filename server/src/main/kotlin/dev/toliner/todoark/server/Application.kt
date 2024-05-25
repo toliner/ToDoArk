@@ -4,6 +4,7 @@ import io.micronaut.context.ApplicationContextBuilder
 import io.micronaut.context.ApplicationContextConfigurer
 import io.micronaut.context.annotation.ContextConfigurer
 import io.micronaut.runtime.Micronaut.run
+import io.micronaut.serde.annotation.SerdeImport
 import io.swagger.v3.oas.annotations.*
 import io.swagger.v3.oas.annotations.info.*
 

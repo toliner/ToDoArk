@@ -33,5 +33,4 @@ dependencyResolutionManagement {
 }
 
 include("server")
-include("discord")
 include("common")

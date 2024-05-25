@@ -31,12 +31,14 @@ dependencies {
     implementation("io.micronaut:micronaut-management")
     implementation("io.micronaut:micronaut-retry")
     implementation("io.micronaut.kotlin:micronaut-kotlin-runtime")
-    // implementation("io.micronaut.security:micronaut-security-jwt")
-    // implementation("io.micronaut.security:micronaut-security-oauth2")
-    // implementation("io.micronaut.security:micronaut-security-session")
+    implementation("io.micronaut.security:micronaut-security-jwt")
+    implementation("io.micronaut.security:micronaut-security-oauth2")
+    implementation("io.micronaut.security:micronaut-security-session")
     implementation("io.micronaut.serde:micronaut-serde-jackson")
     implementation("io.micronaut.sql:micronaut-jdbc-hikari")
     implementation("io.micronaut.data:micronaut-data-jdbc")
+    implementation("io.micrometer:context-propagation")
+    implementation("io.micronaut.reactor:micronaut-reactor")
     implementation("org.apache.logging.log4j:log4j-api")
     implementation("jakarta.annotation:jakarta.annotation-api")
     implementation(platform("org.apache.logging.log4j:log4j-bom:2.23.1"))
@@ -108,6 +110,6 @@ tasks.named<io.micronaut.gradle.docker.NativeImageDockerfile>("dockerfileNative"
 allOpen {
     annotations(
         "io.micronaut.aop.Around",
-        "io.micronaut.aop.Introduction"
+        "io.micronaut.aop.Introduction",
     )
 }

@@ -14,9 +14,13 @@ compose = "1.6.6"
 compose-plugin = "1.6.2"
 kotlin = "1.9.23"
 micronaut = "4.4.2"
+log4j = "2.23.1"
 
 [libraries]
 kotlinx-coroutine = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version = "1.8.1"}
+log4j-api = { group = "org.apache.logging.log4j", name = "log4j-api", version.ref = "log4j"}
+log4j-core = { group = "org.apache.logging.log4j", name = "log4j-core", version.ref = "log4j"}
+log4j-slf4j2 = { group = "org.apache.logging.log4j", name = "log4j-slf4j2-impl", version.ref = "log4j"}
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }

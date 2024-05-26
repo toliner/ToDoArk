@@ -1,5 +1,6 @@
 package dev.toliner.todoark.server
 
+import dev.toliner.todoarc.model.endpoint.GetUser
 import io.micronaut.context.ApplicationContextBuilder
 import io.micronaut.context.ApplicationContextConfigurer
 import io.micronaut.context.annotation.ContextConfigurer
@@ -14,6 +15,7 @@ import io.swagger.v3.oas.annotations.info.*
         version = "0.0",
     ),
 )
+@SerdeImport(GetUser.Response::class)
 object Api
 
 @ContextConfigurer
